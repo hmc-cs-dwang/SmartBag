@@ -11,6 +11,7 @@
 		25510A851CC1EDEB008E95F9 /* DFBlunoDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 25510A801CC1EDEB008E95F9 /* DFBlunoDevice.m */; };
 		25510A861CC1EDEB008E95F9 /* DFBlunoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 25510A821CC1EDEB008E95F9 /* DFBlunoManager.m */; };
 		25510A881CC1F1B4008E95F9 /* BLEDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 25510A7C1CC1EDEB008E95F9 /* BLEDevice.m */; };
+		25510A911CC200BE008E95F9 /* BluetoothConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25510A901CC200BE008E95F9 /* BluetoothConnectViewController.swift */; };
 		325327CA1CC1E09300C28DC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325327C91CC1E09300C28DC1 /* AppDelegate.swift */; };
 		325327CC1CC1E09300C28DC1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325327CB1CC1E09300C28DC1 /* ViewController.swift */; };
 		325327CF1CC1E09300C28DC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325327CD1CC1E09300C28DC1 /* Main.storyboard */; };
@@ -54,6 +55,7 @@
 		25510A811CC1EDEB008E95F9 /* DFBlunoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFBlunoManager.h; sourceTree = "<group>"; };
 		25510A821CC1EDEB008E95F9 /* DFBlunoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFBlunoManager.m; sourceTree = "<group>"; };
 		25510A871CC1EE9D008E95F9 /* Smartbag-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smartbag-Bridging-Header.h"; sourceTree = "<group>"; };
+		25510A901CC200BE008E95F9 /* BluetoothConnectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothConnectViewController.swift; sourceTree = "<group>"; };
 		325327C61CC1E09300C28DC1 /* SmartBag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartBag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		325327C91CC1E09300C28DC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		325327CB1CC1E09300C28DC1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +126,14 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
+		25510A8F1CC2007E008E95F9 /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				25510A901CC200BE008E95F9 /* BluetoothConnectViewController.swift */,
+			);
+			name = Bluetooth;
+			sourceTree = "<group>";
+		};
 		325327BD1CC1E09300C28DC1 = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +163,7 @@
 				325327CB1CC1E09300C28DC1 /* ViewController.swift */,
 				325327CD1CC1E09300C28DC1 /* Main.storyboard */,
 				325328111CC1FABE00C28DC1 /* Add Item */,
+				25510A8F1CC2007E008E95F9 /* Bluetooth */,
 				325327FE1CC1EDF800C28DC1 /* Bag */,
 				325327D31CC1E09300C28DC1 /* Assets.xcassets */,
 				325327D51CC1E09300C28DC1 /* LaunchScreen.storyboard */,
@@ -345,6 +356,7 @@
 				325327FD1CC1EDE900C28DC1 /* BagTableViewController.swift in Sources */,
 				325328001CC1EF9B00C28DC1 /* PListManager.swift in Sources */,
 				325327CA1CC1E09300C28DC1 /* AppDelegate.swift in Sources */,
+				25510A911CC200BE008E95F9 /* BluetoothConnectViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
