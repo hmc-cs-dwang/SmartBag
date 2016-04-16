@@ -44,12 +44,18 @@ class PListManager: NSObject {
         dict = NSMutableDictionary(contentsOfFile: path)!
     }
     
-    func addItem() {
-        
+    func addItem(key: String, item: BagItem) {
+        dict.setObject(item, forKey: key)
+        if dict.writeToFile(path, atomically: false) {
+            print("Did add a new item.")
+        }
     }
     
-    func getItem(id: String) {
-        
+    func getItem(key: String) -> BagItem? {
+        if let item = dict.valueForKey(key) as? BagItem {
+            return item
+        }
+        return nil
     }
     
 }
