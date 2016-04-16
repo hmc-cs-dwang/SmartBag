@@ -72,10 +72,10 @@ class BluetoothConnectViewController : UIViewController, DFBlunoDelegate {
         // pass
     }
     
-    @objc func didReceiveData(data: NSData!, device dev: DFBlunoDevice!) {
+    @objc(didReceiveData:Device:) func didReceiveData(data: NSData!, device dev: DFBlunoDevice!) {
         // pass
     }
-
+    
     @IBAction func enterMainPage(sender: UIButton) {
         self.performSegueWithIdentifier("enterMainViewSeque", sender: self)
     }
