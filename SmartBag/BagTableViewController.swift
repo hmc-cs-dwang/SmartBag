@@ -8,11 +8,19 @@
 
 import UIKit
 
-class BagTableViewController: UITableViewController {
+class BagTableViewController: UITableViewController, PListManagerDelegate {
     var plistManager = PListManager()
+    
+    var bagItems: [BagItem] {
+        get {
+            return plistManager.getPresentItems()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        plistManager.delegate = self
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -30,21 +38,27 @@ class BagTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return bagItems.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("item", forIndexPath: indexPath) as! BagItemCellTableViewCell
         
-        // cell.itemName =
+        cell.itemName.text = bagItems[indexPath.row].name_
 
         return cell
+    }
+    
+    func didChangePlist(sender: PListManager) {
+        if !isViewLoaded() {
+            tableView.reloadData()
+        }
     }
 
     /*
