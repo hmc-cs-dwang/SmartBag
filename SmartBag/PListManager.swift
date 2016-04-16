@@ -12,11 +12,13 @@ protocol PListManagerDelegate : class {
     func didChangePlist(sender: PListManager)
 }
 
-class PListManager: NSObject {
+class PListManager: NSObject, DFBlunoDelegate {
     var path = String()
     var dict = NSMutableDictionary()
     
     var delegate: PListManagerDelegate?
+    
+    var blunoManager: DFBlunoManager?
     
     override init() {
         super.init()
@@ -47,7 +49,42 @@ class PListManager: NSObject {
         
         dict = NSMutableDictionary(contentsOfFile: path)!
         
+        let bluno = DFBlunoManager.sharedInstance()
+        
+        if let blunoM = bluno as? DFBlunoManager {
+            blunoManager = blunoM
+            blunoManager!.delegate = self
+        }
+        
     }
+    
+    // DFBlunoDelegate functions
+    @objc func bleDidUpdateState(bleSupported: Bool) {
+        if (bleSupported && blunoManager != nil) {
+            blunoManager!.scan()
+        }
+    }
+    
+    @objc func didDiscoverDevice(dev: DFBlunoDevice!) {
+        // pass
+    }
+    
+    @objc func readyToCommunicate(dev: DFBlunoDevice!) {
+        // pass
+    }
+    
+    @objc func didDisconnectDevice(dev: DFBlunoDevice!) {
+        print("connection is lost")
+    }
+    
+    @objc func didWriteData(dev: DFBlunoDevice!) {
+        // pass
+    }
+    
+    @objc(didReceiveData:Device:) func didReceiveData(data: NSData!, device dev: DFBlunoDevice!) {
+        print(String(data))
+    }
+
     
     func addItem(key: String, item: BagItem) {
         dict.setObject(item, forKey: key)
