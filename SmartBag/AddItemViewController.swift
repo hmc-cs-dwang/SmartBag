@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class AddItemViewController: UIViewController {
     var key = ""
@@ -28,8 +29,34 @@ class AddItemViewController: UIViewController {
     }
     
     @IBAction func add(sender: UIButton) {
-        let plistManager = PListManager()
-        plistManager.addItem(key, item: BagItem(name: name.text!, itemImage: image.text!, itemIn: true))
+        //1
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        //2
+        let entity =  NSEntityDescription.entityForName("BagItem", inManagedObjectContext:managedContext)
+        
+        let item = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        
+        //3
+        item.setValue(name.text!, forKey: "name")
+        item.setValue(image.text!, forKey: "image")
+        item.setValue(true, forKey: "in")
+        item.setValue(NSDate(timeIntervalSinceNow: 0.0), forKey: "date")
+        item.setValue(key, forKey: "id")
+        
+        //4
+        do {
+            try managedContext.save()
+            //5
+        } catch let error as NSError  {
+            print("Could not save \(error), \(error.userInfo)")
+        }
+
+        
+//        let plistManager = PListManager()
+//        plistManager.addItem(key, item: BagItem(name: name.text!, itemImage: image.text!, itemIn: true))
         dismissViewControllerAnimated(true, completion: nil)
     }
 //

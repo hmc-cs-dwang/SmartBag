@@ -7,22 +7,22 @@
 //
 
 import UIKit
+import CoreData
 
-class BagItem: NSObject {
+class BagItem: NSManagedObject {
     var name_ = ""
     var itemImage_ = ""
     var itemIn_ = false
     var addTime_ = NSDate()
-    
-    convenience init(name: String, itemImage: String, itemIn: Bool) {
-        self.init(name: name, itemImage: itemImage, itemIn: itemIn, time: NSDate(timeIntervalSinceNow: 0))
-    }
-    
-    init(name: String, itemImage: String, itemIn: Bool, time: NSDate) {
-        super.init()
-        name_ = name
-        itemImage_ = itemImage
-        itemIn_ = itemIn
-        addTime_ = time
-    }
+//    
+//    convenience init(name: String, itemImage: String, itemIn: Bool) {
+//        self.init(name: name, itemImage: itemImage, itemIn: itemIn, time: NSDate(timeIntervalSinceNow: 0))
+//    }
+//    
+//    init(name: String, itemImage: String, itemIn: Bool, time: NSDate) {
+//        name_ = name
+//        itemImage_ = itemImage
+//        itemIn_ = itemIn
+//        addTime_ = time
+//    }
 }

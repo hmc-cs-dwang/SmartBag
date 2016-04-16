@@ -7,9 +7,16 @@
 //
 
 import UIKit
+import CoreData
 
-class BagTableViewController: UITableViewController, PListManagerDelegate, DFBlunoDelegate {
-    var plistManager: PListManager?
+class BagTableViewController: UITableViewController, DFBlunoDelegate {
+//    var plistManager: PListManager?
+    var bagItems = [NSManagedObject]()
+    var visibleItems = [NSManagedObject]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     var blunoManager: DFBlunoManager?
     
@@ -17,8 +24,8 @@ class BagTableViewController: UITableViewController, PListManagerDelegate, DFBlu
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        plistManager = PListManager()
-        plistManager!.delegate = self
+//        plistManager = PListManager()
+//        plistManager!.delegate = self
         
         let bluno = DFBlunoManager.sharedInstance()
         
@@ -48,23 +55,30 @@ class BagTableViewController: UITableViewController, PListManagerDelegate, DFBlu
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return plistManager!.getPresentItems().count
+//        return plistManager!.getPresentItems().count
+        return visibleItems.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("item", forIndexPath: indexPath) as! BagItemCellTableViewCell
-        
-        cell.itemName.text = plistManager!.getPresentItems()[indexPath.row].name_
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("item") as! BagItemCellTableViewCell
+        cell.itemName.text = visibleItems[indexPath.row].valueForKey("name") as? String
         return cell
     }
     
-    func didChangePlist(sender: PListManager) {
-        if !isViewLoaded() {
-            tableView.reloadData()
-        }
-    }
+//    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+//        let cell = tableView.dequeueReusableCellWithIdentifier("item", forIndexPath: indexPath) as? BagItemCellTableViewCell
+//        
+////        cell.itemName.text = plistManager!.getPresentItems()[indexPath.row].name_
+//        cell!.itemName.text = bagItems[indexPath.row].valueForKey("name")
+//        return cell!
+//    }
+    
+//    func didChangePlist(sender: PListManager) {
+//        if !isViewLoaded() {
+//            tableView.reloadData()
+//        }
+//    }
     
     // DFBlunoDelegate functions
     @objc func bleDidUpdateState(bleSupported: Bool) {
@@ -91,11 +105,35 @@ class BagTableViewController: UITableViewController, PListManagerDelegate, DFBlu
     
     @objc(didReceiveData:Device:) func didReceiveData(data: NSData!, device dev: DFBlunoDevice!) {
         itemId = NSString(data:data, encoding:NSUTF8StringEncoding) as! String
-        if let _ = plistManager!.getItem(itemId) {
-            plistManager!.visitItem(itemId)
-        } else {
+//        if let _ = plistManager!.getItem(itemId) {
+//            plistManager!.visitItem(itemId)
+//        } else {
+//            self.performSegueWithIdentifier("AddItemSegue", sender: self)
+//        }
+        if !itemExistsAndFlip(itemId) {
             self.performSegueWithIdentifier("AddItemSegue", sender: self)
         }
+        reload()
+    }
+    
+    func itemExistsAndFlip(key: String) -> Bool {
+        for item in bagItems {
+            if item.valueForKey("id") as! String == key {
+                let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+                
+                let managedContext = appDelegate.managedObjectContext
+                
+                item.setValue(!(item.valueForKey("in") as! Bool), forKey: "in")
+                
+                do {
+                    try managedContext.save()
+                } catch let error as NSError  {
+                    print("Could not save \(error), \(error.userInfo)")
+                }
+                return true
+            }
+        }
+        return false
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -104,12 +142,45 @@ class BagTableViewController: UITableViewController, PListManagerDelegate, DFBlu
             addVC.key = itemId
         }
     }
-
-    override func viewDidAppear(animated: Bool) {
-        print("Bag items:")
-        print(plistManager!.getPresentItems())
-        tableView.reloadData()
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        reload()
     }
+    
+    func reload() {
+        //1
+        let appDelegate =
+            UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        //2
+        let fetchRequest = NSFetchRequest(entityName: "BagItem")
+        
+        //3
+        do {
+            let results =
+                try managedContext.executeFetchRequest(fetchRequest)
+            bagItems = results as! [NSManagedObject]
+            visibleItems = [NSManagedObject]()
+            for item in bagItems {
+                if item.valueForKey("in") as! Bool {
+                    visibleItems.append(item)
+                }
+            }
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+    }
+    
+
+//    override func viewDidAppear(animated: Bool) {
+//        super.viewDidAppear(animated)
+//        print("Bag items:")
+//        print(plistManager!.getPresentItems())
+//        tableView.reloadData()
+//    }
     
     /*
     // Override to support conditional editing of the table view.
