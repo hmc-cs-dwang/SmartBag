@@ -9,7 +9,14 @@
 import UIKit
 
 class BagItem: NSObject {
-    var name = ""
-    var itemImage = ""
-    var itemIn: Bool = false
+    var name_ = ""
+    var itemImage_ = ""
+    var itemIn_ = false
+    
+    init(name: String, itemImage: String, itemIn: Bool) {
+        super.init()
+        name_ = name
+        itemImage_ = itemImage
+        itemIn_ = itemIn
+    }
 }

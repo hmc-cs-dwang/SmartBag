@@ -24,6 +24,7 @@
 		325328001CC1EF9B00C28DC1 /* PListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325327FF1CC1EF9B00C28DC1 /* PListManager.swift */; };
 		325328021CC1EFDE00C28DC1 /* itemsPList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 325328011CC1EFDE00C28DC1 /* itemsPList.plist */; };
 		3253280E1CC1F62B00C28DC1 /* BagItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3253280D1CC1F62B00C28DC1 /* BagItem.swift */; };
+		325328101CC1FA2700C28DC1 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3253280F1CC1FA2700C28DC1 /* AddItemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		325327FF1CC1EF9B00C28DC1 /* PListManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PListManager.swift; sourceTree = "<group>"; };
 		325328011CC1EFDE00C28DC1 /* itemsPList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = itemsPList.plist; sourceTree = "<group>"; };
 		3253280D1CC1F62B00C28DC1 /* BagItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BagItem.swift; sourceTree = "<group>"; };
+		3253280F1CC1FA2700C28DC1 /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +152,7 @@
 				325327C91CC1E09300C28DC1 /* AppDelegate.swift */,
 				325327CB1CC1E09300C28DC1 /* ViewController.swift */,
 				325327CD1CC1E09300C28DC1 /* Main.storyboard */,
+				325328111CC1FABE00C28DC1 /* Add Item */,
 				325327FE1CC1EDF800C28DC1 /* Bag */,
 				325327D31CC1E09300C28DC1 /* Assets.xcassets */,
 				325327D51CC1E09300C28DC1 /* LaunchScreen.storyboard */,
@@ -187,6 +190,14 @@
 				3253280D1CC1F62B00C28DC1 /* BagItem.swift */,
 			);
 			name = Bag;
+			sourceTree = "<group>";
+		};
+		325328111CC1FABE00C28DC1 /* Add Item */ = {
+			isa = PBXGroup;
+			children = (
+				3253280F1CC1FA2700C28DC1 /* AddItemViewController.swift */,
+			);
+			name = "Add Item";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -327,6 +338,7 @@
 				25510A841CC1EDEB008E95F9 /* BLEUtility.m in Sources */,
 				25510A851CC1EDEB008E95F9 /* DFBlunoDevice.m in Sources */,
 				325327D21CC1E09300C28DC1 /* SmartBag.xcdatamodeld in Sources */,
+				325328101CC1FA2700C28DC1 /* AddItemViewController.swift in Sources */,
 				325327FB1CC1EA0D00C28DC1 /* BagItemCellTableViewCell.swift in Sources */,
 				3253280E1CC1F62B00C28DC1 /* BagItem.swift in Sources */,
 				325327CC1CC1E09300C28DC1 /* ViewController.swift in Sources */,
