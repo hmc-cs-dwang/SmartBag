@@ -47,8 +47,6 @@ class PListManager: NSObject {
         dict = NSMutableDictionary(contentsOfFile: path)!
     }
     
-//    func addItem(<#parameters#>) -> <#return type#> {
-//        <#function body#>
-//    }
+
     
 }
