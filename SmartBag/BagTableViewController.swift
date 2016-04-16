@@ -9,22 +9,16 @@
 import UIKit
 
 class BagTableViewController: UITableViewController, PListManagerDelegate, DFBlunoDelegate {
-    var plistManager = PListManager()
+    var plistManager: PListManager?
     
     var blunoManager: DFBlunoManager?
     
     var itemId: String = ""
     
-    var bagItems: [BagItem] {
-        get {
-            return plistManager.getPresentItems()
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        plistManager.delegate = self
+        plistManager = PListManager()
+        plistManager!.delegate = self
         
         let bluno = DFBlunoManager.sharedInstance()
         
@@ -54,14 +48,14 @@ class BagTableViewController: UITableViewController, PListManagerDelegate, DFBlu
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return bagItems.count
+        return plistManager!.getPresentItems().count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("item", forIndexPath: indexPath) as! BagItemCellTableViewCell
         
-        cell.itemName.text = bagItems[indexPath.row].name_
+        cell.itemName.text = plistManager!.getPresentItems()[indexPath.row].name_
 
         return cell
     }
@@ -71,7 +65,6 @@ class BagTableViewController: UITableViewController, PListManagerDelegate, DFBlu
             tableView.reloadData()
         }
     }
-    
     
     // DFBlunoDelegate functions
     @objc func bleDidUpdateState(bleSupported: Bool) {
@@ -98,20 +91,26 @@ class BagTableViewController: UITableViewController, PListManagerDelegate, DFBlu
     
     @objc(didReceiveData:Device:) func didReceiveData(data: NSData!, device dev: DFBlunoDevice!) {
         itemId = NSString(data:data, encoding:NSUTF8StringEncoding) as! String
-        if let _ = plistManager.getItem(itemId) {
-            plistManager.visitItem(itemId)
+        if let _ = plistManager!.getItem(itemId) {
+            plistManager!.visitItem(itemId)
         } else {
             self.performSegueWithIdentifier("AddItemSegue", sender: self)
         }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier == "AddItemViewController") {
+        if (segue.identifier == "AddItemSegue") {
             let addVC = segue.destinationViewController as! AddItemViewController
             addVC.key = itemId
         }
     }
 
+    override func viewDidAppear(animated: Bool) {
+        print("Bag items:")
+        print(plistManager!.getPresentItems())
+        tableView.reloadData()
+    }
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

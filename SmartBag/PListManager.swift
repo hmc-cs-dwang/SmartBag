@@ -14,7 +14,20 @@ protocol PListManagerDelegate : class {
 
 class PListManager: NSObject {
     var path = String()
-    var dict = NSMutableDictionary()
+    var dict = NSMutableDictionary() {
+        didSet {
+            if dict.writeToFile(path, atomically: false) {
+                print("Did add a new item.")
+            } else {
+                print("Did not write to the file")
+            }
+            if delegate != nil {
+                print("added to delegate")
+                delegate!.didChangePlist(self)
+            }
+        }
+    }
+
     
     var delegate: PListManagerDelegate?
     
@@ -49,37 +62,41 @@ class PListManager: NSObject {
     }
     
     func addItem(key: String, item: BagItem) {
-        dict.setObject(item, forKey: key)
-        if dict.writeToFile(path, atomically: false) {
-            print("Did add a new item.")
-        }
-        if delegate != nil {
-            delegate!.didChangePlist(self)
-        }
+        let itemDict = NSMutableDictionary()
+        itemDict["name"] = item.name_
+        itemDict["image"] = item.itemImage_
+        itemDict["time"] = item.addTime_
+        itemDict["in"] = item.itemIn_
+        dict[key] = itemDict
     }
     
     func getItem(key: String) -> BagItem? {
-        if let item = dict.valueForKey(key) as? BagItem {
-            return item
+        print("Trying to get an item.")
+        print(dict)
+        dict = NSMutableDictionary(contentsOfFile: path)!
+        if let itemDict = dict[key] {
+            let item = itemDict as! NSDictionary
+            return BagItem(name: item["name"]! as! String, itemImage: item["image"]! as! String, itemIn: item["in"]! as! Bool, time: item["time"]! as! NSDate)
         }
         return nil
     }
     
     func visitItem(key: String) {
-        if let item = dict.valueForKey(key) as? BagItem {
-            item.itemIn_ = !item.itemIn_
-            dict.setObject(item, forKey: key)
-        }
-        if delegate != nil {
-            delegate!.didChangePlist(self)
+        if let item = dict[key] as? NSMutableDictionary {
+            item["in"] = !(item["in"] as! Bool)
+            dict[key] = item
         }
     }
     
     func getPresentItems() -> [BagItem] {
         var bag = [BagItem]()
+        print("OK")
+        print("Dict:")
+        dict = NSMutableDictionary(contentsOfFile: path)!
+        print(dict)
         for item in dict.allValues {
-            if ((item as? BagItem) != nil) {
-                bag.append(item as! BagItem)
+            if item["in"]! as! Bool {
+                bag.append(BagItem(name: item["name"]! as! String, itemImage: item["image"]! as! String, itemIn: item["in"]! as! Bool, time: item["time"]! as! NSDate))
             }
         }
         return bag
