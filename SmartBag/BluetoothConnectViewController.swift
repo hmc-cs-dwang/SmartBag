@@ -47,6 +47,10 @@ class BluetoothConnectViewController : UIViewController, DFBlunoDelegate {
             loadingLabel.text = "Discovered My SmartBag!"
             discovered = true
             loadingIcon.hidden = true
+            
+            if (blunoManager != nil) {
+                blunoManager!.connectToDevice(dev)
+            }
         } else {
             loadingLabel.text = "Discovered a Unrecognized Device"
             discovered = false
