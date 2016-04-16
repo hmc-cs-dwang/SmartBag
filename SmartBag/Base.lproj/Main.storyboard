@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="y8d-HP-t6N">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="kPs-yh-zyd">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -166,6 +166,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3e3-d8-E5c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="235" y="1583"/>
+        </scene>
+        <!--Bluetooth Connect View Controller-->
+        <scene sceneID="pLg-54-mri">
+            <objects>
+                <viewController id="kPs-yh-zyd" customClass="BluetoothConnectViewController" customModule="SmartBag" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lHS-A8-BE7"/>
+                        <viewControllerLayoutGuide type="bottom" id="CFW-hU-gLh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JoN-uj-Fmm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="WtJ-4j-VYn">
+                                <rect key="frame" x="290" y="219" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mW9-v1-ekb">
+                                <rect key="frame" x="267" y="418" width="66" height="30"/>
+                                <state key="normal" title="Use Now!"/>
+                                <connections>
+                                    <action selector="enterMainPage:" destination="kPs-yh-zyd" eventType="touchUpInside" id="oDe-uM-QWh"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connecting to THE Bag..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFg-Nl-w50">
+                                <rect key="frame" x="204" y="170" width="193" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="mW9-v1-ekb" secondAttribute="trailing" constant="247" id="846-gN-pfJ"/>
+                            <constraint firstItem="mW9-v1-ekb" firstAttribute="top" secondItem="WtJ-4j-VYn" secondAttribute="bottom" constant="180" id="HmD-im-VD4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hFg-Nl-w50" secondAttribute="trailing" constant="183" id="L4Y-x5-MjJ"/>
+                            <constraint firstItem="WtJ-4j-VYn" firstAttribute="top" secondItem="hFg-Nl-w50" secondAttribute="bottom" constant="28" id="NJJ-KI-tdE"/>
+                            <constraint firstItem="mW9-v1-ekb" firstAttribute="leading" secondItem="JoN-uj-Fmm" secondAttribute="leadingMargin" constant="247" id="O1h-Uc-aPb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="WtJ-4j-VYn" secondAttribute="trailing" constant="270" id="bhJ-ZE-o08"/>
+                            <constraint firstItem="hFg-Nl-w50" firstAttribute="top" secondItem="lHS-A8-BE7" secondAttribute="bottom" constant="150" id="mg8-Iy-xPV"/>
+                            <constraint firstItem="hFg-Nl-w50" firstAttribute="leading" secondItem="JoN-uj-Fmm" secondAttribute="leadingMargin" constant="184" id="sKI-oU-ccc"/>
+                            <constraint firstItem="WtJ-4j-VYn" firstAttribute="leading" secondItem="JoN-uj-Fmm" secondAttribute="leadingMargin" constant="270" id="urW-LX-q1s"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="loadingIcon" destination="WtJ-4j-VYn" id="A25-Bp-FK7"/>
+                        <outlet property="loadingLabel" destination="hFg-Nl-w50" id="Vt0-Vj-BLB"/>
+                        <outlet property="segueButton" destination="mW9-v1-ekb" id="2MP-az-CLX"/>
+                        <segue destination="y8d-HP-t6N" kind="show" identifier="enterMainViewSeque" id="md7-vi-0fM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ve3-7m-C6b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-433" y="848"/>
         </scene>
     </scenes>
 </document>
