@@ -15,6 +15,7 @@
 		325327D71CC1E09300C28DC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325327D51CC1E09300C28DC1 /* LaunchScreen.storyboard */; };
 		325327E21CC1E09300C28DC1 /* SmartBagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325327E11CC1E09300C28DC1 /* SmartBagTests.swift */; };
 		325327ED1CC1E09300C28DC1 /* SmartBagUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325327EC1CC1E09300C28DC1 /* SmartBagUITests.swift */; };
+		CC265FA61CC1E9770073ED64 /* BagItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC265FA51CC1E9770073ED64 /* BagItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		325327E81CC1E09300C28DC1 /* SmartBagUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartBagUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		325327EC1CC1E09300C28DC1 /* SmartBagUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartBagUITests.swift; sourceTree = "<group>"; };
 		325327EE1CC1E09300C28DC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC265FA51CC1E9770073ED64 /* BagItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BagItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				325327C91CC1E09300C28DC1 /* AppDelegate.swift */,
+				CC265FA51CC1E9770073ED64 /* BagItem.swift */,
 				325327CB1CC1E09300C28DC1 /* ViewController.swift */,
 				325327CD1CC1E09300C28DC1 /* Main.storyboard */,
 				325327D31CC1E09300C28DC1 /* Assets.xcassets */,
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				325327D21CC1E09300C28DC1 /* SmartBag.xcdatamodeld in Sources */,
+				CC265FA61CC1E9770073ED64 /* BagItem.swift in Sources */,
 				325327CC1CC1E09300C28DC1 /* ViewController.swift in Sources */,
 				325327CA1CC1E09300C28DC1 /* AppDelegate.swift in Sources */,
 			);
@@ -488,6 +492,7 @@
 				325327F31CC1E09300C28DC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		325327F41CC1E09300C28DC1 /* Build configuration list for PBXNativeTarget "SmartBagTests" */ = {
 			isa = XCConfigurationList;
@@ -496,6 +501,7 @@
 				325327F61CC1E09300C28DC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		325327F71CC1E09300C28DC1 /* Build configuration list for PBXNativeTarget "SmartBagUITests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +510,7 @@
 				325327F91CC1E09300C28DC1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
