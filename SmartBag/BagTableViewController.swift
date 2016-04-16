@@ -180,6 +180,33 @@ class BagTableViewController: UITableViewController, DFBlunoDelegate {
         }
     }
     
+    @IBAction func reset(sender: UIButton) {
+        //1
+        let appDelegate =
+            UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        //2
+        let fetchRequest = NSFetchRequest(entityName: "BagItem")
+        
+        //3
+        do {
+            let results =
+                try managedContext.executeFetchRequest(fetchRequest)
+            bagItems = results as! [NSManagedObject]
+            visibleItems = [NSManagedObject]()
+            for item in bagItems {
+                managedContext.deleteObject(item)
+            }
+            try managedContext.save()
+            bagItems = [NSManagedObject]()
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+        
+    }
+    
 
 //    override func viewDidAppear(animated: Bool) {
 //        super.viewDidAppear(animated)

@@ -58,6 +58,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="U9c-co-wae">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="une-G2-Aac">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pcg-x6-6zQ">
+                                <rect key="frame" x="20" y="7" width="133" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Reset"/>
+                                <connections>
+                                    <action selector="reset:" destination="fkA-Zh-7b2" eventType="touchUpInside" id="7X2-aX-92t"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Scheduler" id="gqp-2F-Dbw">
                             <connections>
                                 <segue destination="QHA-gh-B5u" kind="show" id="F3a-tk-Aq5"/>
