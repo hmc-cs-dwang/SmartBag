@@ -21,6 +21,9 @@
 		325327E21CC1E09300C28DC1 /* SmartBagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325327E11CC1E09300C28DC1 /* SmartBagTests.swift */; };
 		325327ED1CC1E09300C28DC1 /* SmartBagUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325327EC1CC1E09300C28DC1 /* SmartBagUITests.swift */; };
 		325327FB1CC1EA0D00C28DC1 /* BagItemCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325327FA1CC1EA0D00C28DC1 /* BagItemCellTableViewCell.swift */; };
+		325327FD1CC1EDE900C28DC1 /* BagTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325327FC1CC1EDE900C28DC1 /* BagTableViewController.swift */; };
+		325328001CC1EF9B00C28DC1 /* PListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325327FF1CC1EF9B00C28DC1 /* PListManager.swift */; };
+		325328021CC1EFDE00C28DC1 /* itemsPList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 325328011CC1EFDE00C28DC1 /* itemsPList.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +69,9 @@
 		325327EC1CC1E09300C28DC1 /* SmartBagUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartBagUITests.swift; sourceTree = "<group>"; };
 		325327EE1CC1E09300C28DC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		325327FA1CC1EA0D00C28DC1 /* BagItemCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BagItemCellTableViewCell.swift; sourceTree = "<group>"; };
+		325327FC1CC1EDE900C28DC1 /* BagTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BagTableViewController.swift; sourceTree = "<group>"; };
+		325327FF1CC1EF9B00C28DC1 /* PListManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PListManager.swift; sourceTree = "<group>"; };
+		325328011CC1EFDE00C28DC1 /* itemsPList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = itemsPList.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +176,17 @@
 				325327EE1CC1E09300C28DC1 /* Info.plist */,
 			);
 			path = SmartBagUITests;
+			sourceTree = "<group>";
+		};
+		325327FE1CC1EDF800C28DC1 /* Bag */ = {
+			isa = PBXGroup;
+			children = (
+				325327FC1CC1EDE900C28DC1 /* BagTableViewController.swift */,
+				325327FF1CC1EF9B00C28DC1 /* PListManager.swift */,
+				325328011CC1EFDE00C28DC1 /* itemsPList.plist */,
+				325327FA1CC1EA0D00C28DC1 /* BagItemCellTableViewCell.swift */,
+			);
+			name = Bag;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,6 +294,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				325328021CC1EFDE00C28DC1 /* itemsPList.plist in Resources */,
 				325327D71CC1E09300C28DC1 /* LaunchScreen.storyboard in Resources */,
 				325327D41CC1E09300C28DC1 /* Assets.xcassets in Resources */,
 				325327CF1CC1E09300C28DC1 /* Main.storyboard in Resources */,
@@ -312,6 +330,8 @@
 				325327D21CC1E09300C28DC1 /* SmartBag.xcdatamodeld in Sources */,
 				325327FB1CC1EA0D00C28DC1 /* BagItemCellTableViewCell.swift in Sources */,
 				325327CC1CC1E09300C28DC1 /* ViewController.swift in Sources */,
+				325327FD1CC1EDE900C28DC1 /* BagTableViewController.swift in Sources */,
+				325328001CC1EF9B00C28DC1 /* PListManager.swift in Sources */,
 				325327CA1CC1E09300C28DC1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

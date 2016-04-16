@@ -7,10 +7,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Bag Table View Controller-->
         <scene sceneID="I2j-Mq-Tar">
             <objects>
-                <tableViewController id="fkA-Zh-7b2" sceneMemberID="viewController">
+                <tableViewController id="fkA-Zh-7b2" customClass="BagTableViewController" customModule="SmartBag" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="72" sectionHeaderHeight="28" sectionFooterHeight="28" id="e7a-uW-b5c">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -45,6 +45,7 @@
                                         <constraint firstItem="7fV-2n-qnz" firstAttribute="centerY" secondItem="5UZ-1O-VTu" secondAttribute="centerY" id="nwQ-zv-fCX"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <accessibility key="accessibilityConfiguration" identifier="item"/>
                                 <connections>
                                     <outlet property="itemImage" destination="5UZ-1O-VTu" id="goo-j8-1Pu"/>
                                     <outlet property="itemName" destination="7fV-2n-qnz" id="daN-bE-mXu"/>
