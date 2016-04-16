@@ -25,9 +25,6 @@ class PListManager: NSObject {
         if(!fileManager.fileExistsAtPath(path)) {
             // If it doesn't, copy it from the default file in the Bundle
             if let bundlePath = NSBundle.mainBundle().pathForResource("itemsPList", ofType: "plist") {
-                
-                let resultDictionary = NSMutableDictionary(contentsOfFile: bundlePath)
-                print("Bundle Result.plist file is --> \(resultDictionary?.description)")
                 do {
                     try fileManager.copyItemAtPath(bundlePath, toPath: path)
                 } catch {
@@ -47,6 +44,12 @@ class PListManager: NSObject {
         dict = NSMutableDictionary(contentsOfFile: path)!
     }
     
-
+    func addItem() {
+        
+    }
+    
+    func getItem(id: String) {
+        
+    }
     
 }

@@ -13,6 +13,10 @@ class BagItemCellTableViewCell: UITableViewCell {
     @IBOutlet weak var itemImage: UIImageView!
     @IBOutlet weak var itemName: UILabel!
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
