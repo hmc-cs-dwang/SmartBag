@@ -29,7 +29,7 @@ class AddItemViewController: UIViewController {
     
     @IBAction func add(sender: UIButton) {
         let plistManager = PListManager()
-        plistManager.addItem(key, item: BagItem(name: name.text!, itemImage: image.text!, itemIn: false))
+        plistManager.addItem(key, item: BagItem(name: name.text!, itemImage: image.text!, itemIn: true))
         
     }
 
