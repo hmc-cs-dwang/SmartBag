@@ -63,6 +63,12 @@ class BagTableViewController: UITableViewController, DFBlunoDelegate {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("item") as! BagItemCellTableViewCell
         cell.itemName.text = visibleItems[indexPath.row].valueForKey("name") as? String
+        let imageName = visibleItems[indexPath.row].valueForKey("image") as! String
+        if let image = UIImage(named: imageName) {
+            cell.itemImage.image = image
+        } else {
+            cell.itemImage.image = UIImage(named: "default")
+        }
         return cell
     }
     
