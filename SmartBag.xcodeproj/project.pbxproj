@@ -12,6 +12,7 @@
 		25510A861CC1EDEB008E95F9 /* DFBlunoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 25510A821CC1EDEB008E95F9 /* DFBlunoManager.m */; };
 		25510A881CC1F1B4008E95F9 /* BLEDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 25510A7C1CC1EDEB008E95F9 /* BLEDevice.m */; };
 		25510A911CC200BE008E95F9 /* BluetoothConnectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25510A901CC200BE008E95F9 /* BluetoothConnectViewController.swift */; };
+		323B5E091CC2730400D44003 /* SchedulerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323B5E081CC2730400D44003 /* SchedulerViewController.swift */; };
 		325327CA1CC1E09300C28DC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325327C91CC1E09300C28DC1 /* AppDelegate.swift */; };
 		325327CC1CC1E09300C28DC1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325327CB1CC1E09300C28DC1 /* ViewController.swift */; };
 		325327CF1CC1E09300C28DC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325327CD1CC1E09300C28DC1 /* Main.storyboard */; };
@@ -57,6 +58,7 @@
 		25510A821CC1EDEB008E95F9 /* DFBlunoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFBlunoManager.m; sourceTree = "<group>"; };
 		25510A871CC1EE9D008E95F9 /* Smartbag-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smartbag-Bridging-Header.h"; sourceTree = "<group>"; };
 		25510A901CC200BE008E95F9 /* BluetoothConnectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluetoothConnectViewController.swift; sourceTree = "<group>"; };
+		323B5E081CC2730400D44003 /* SchedulerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SchedulerViewController.swift; sourceTree = "<group>"; };
 		325327C61CC1E09300C28DC1 /* SmartBag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartBag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		325327C91CC1E09300C28DC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		325327CB1CC1E09300C28DC1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -136,6 +138,14 @@
 			name = Bluetooth;
 			sourceTree = "<group>";
 		};
+		323B5E0A1CC2731000D44003 /* Scheduler */ = {
+			isa = PBXGroup;
+			children = (
+				323B5E081CC2730400D44003 /* SchedulerViewController.swift */,
+			);
+			name = Scheduler;
+			sourceTree = "<group>";
+		};
 		325327BD1CC1E09300C28DC1 = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +174,7 @@
 				325327C91CC1E09300C28DC1 /* AppDelegate.swift */,
 				325327CB1CC1E09300C28DC1 /* ViewController.swift */,
 				325327CD1CC1E09300C28DC1 /* Main.storyboard */,
+				323B5E0A1CC2731000D44003 /* Scheduler */,
 				325328111CC1FABE00C28DC1 /* Add Item */,
 				25510A8F1CC2007E008E95F9 /* Bluetooth */,
 				325327FE1CC1EDF800C28DC1 /* Bag */,
@@ -355,6 +366,7 @@
 				325327D21CC1E09300C28DC1 /* SmartBag.xcdatamodeld in Sources */,
 				325328101CC1FA2700C28DC1 /* AddItemViewController.swift in Sources */,
 				325327FB1CC1EA0D00C28DC1 /* BagItemCellTableViewCell.swift in Sources */,
+				323B5E091CC2730400D44003 /* SchedulerViewController.swift in Sources */,
 				3253280E1CC1F62B00C28DC1 /* BagItem.swift in Sources */,
 				325327CC1CC1E09300C28DC1 /* ViewController.swift in Sources */,
 				325327FD1CC1EDE900C28DC1 /* BagTableViewController.swift in Sources */,

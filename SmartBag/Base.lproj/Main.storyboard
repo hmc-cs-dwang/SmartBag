@@ -49,7 +49,6 @@
                                 <connections>
                                     <outlet property="itemImage" destination="5UZ-1O-VTu" id="goo-j8-1Pu"/>
                                     <outlet property="itemName" destination="7fV-2n-qnz" id="daN-bE-mXu"/>
-                                    <segue destination="UZ0-S8-hqO" kind="show" action="showDetailViewController:sender:" id="oxB-Rt-9go"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -58,7 +57,13 @@
                             <outlet property="delegate" destination="fkA-Zh-7b2" id="o26-K7-oic"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="U9c-co-wae"/>
+                    <navigationItem key="navigationItem" id="U9c-co-wae">
+                        <barButtonItem key="rightBarButtonItem" title="Scheduler" id="gqp-2F-Dbw">
+                            <connections>
+                                <segue destination="QHA-gh-B5u" kind="show" id="F3a-tk-Aq5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="view" destination="e7a-uW-b5c" id="vhX-Zd-5B7"/>
                         <segue destination="snW-Xz-1cU" kind="presentation" identifier="AddItemSegue" id="QOz-2W-odN"/>
@@ -68,23 +73,73 @@
             </objects>
             <point key="canvasLocation" x="1057" y="848"/>
         </scene>
-        <!--Item View Controller-->
-        <scene sceneID="N0L-VS-KRQ">
+        <!--Scheduler View Controller-->
+        <scene sceneID="wzt-RA-eRT">
             <objects>
-                <viewController id="UZ0-S8-hqO" customClass="ItemViewController" customModule="SmartBag" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="QHA-gh-B5u" customClass="SchedulerViewController" customModule="SmartBag" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="yed-uR-eSZ"/>
-                        <viewControllerLayoutGuide type="bottom" id="1oo-ur-Il7"/>
+                        <viewControllerLayoutGuide type="top" id="tIp-3J-8Rb"/>
+                        <viewControllerLayoutGuide type="bottom" id="aoy-o0-nNu"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="hXb-LL-qoy">
+                    <view key="view" contentMode="scaleToFill" id="VmJ-9y-2ar">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHM-tu-AHK">
+                                <rect key="frame" x="20" y="72" width="87" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KFl-KE-ib0">
+                                <rect key="frame" x="0.0" y="101" width="600" height="216"/>
+                            </pickerView>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="34c-UR-afM">
+                                <rect key="frame" x="0.0" y="325" width="600" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="482505244.39036602">
+                                    <!--2016-04-16 13:14:04 +0000-->
+                                </date>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pYT-VF-qNa">
+                                <rect key="frame" x="516" y="550" width="64" height="30"/>
+                                <state key="normal" title="Schedule"/>
+                                <connections>
+                                    <action selector="schedule:" destination="QHA-gh-B5u" eventType="touchUpInside" id="eS0-iZ-oWL"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="KFl-KE-ib0" secondAttribute="trailing" constant="-20" id="Dpc-5H-ueS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pYT-VF-qNa" secondAttribute="trailing" id="Kpk-eM-g7t"/>
+                            <constraint firstItem="KFl-KE-ib0" firstAttribute="leading" secondItem="hHM-tu-AHK" secondAttribute="trailing" constant="-107" id="NmG-lg-nFZ"/>
+                            <constraint firstItem="pYT-VF-qNa" firstAttribute="top" secondItem="34c-UR-afM" secondAttribute="bottom" constant="9" id="SOY-Qn-25S"/>
+                            <constraint firstItem="34c-UR-afM" firstAttribute="leading" secondItem="VmJ-9y-2ar" secondAttribute="leadingMargin" constant="-20" id="Xpv-ko-jDT"/>
+                            <constraint firstItem="KFl-KE-ib0" firstAttribute="leading" secondItem="VmJ-9y-2ar" secondAttribute="leadingMargin" constant="-20" id="Xqw-j7-BBc"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="hHM-tu-AHK" secondAttribute="leading" id="ZZE-Mo-GBA"/>
+                            <constraint firstItem="34c-UR-afM" firstAttribute="top" secondItem="KFl-KE-ib0" secondAttribute="bottom" constant="8" id="bCa-pk-8Vw"/>
+                            <constraint firstItem="aoy-o0-nNu" firstAttribute="top" secondItem="pYT-VF-qNa" secondAttribute="bottom" constant="20" id="hav-uS-89h"/>
+                            <constraint firstItem="hHM-tu-AHK" firstAttribute="top" secondItem="tIp-3J-8Rb" secondAttribute="bottom" constant="8" id="sIt-Ez-GrD"/>
+                            <constraint firstItem="KFl-KE-ib0" firstAttribute="top" secondItem="hHM-tu-AHK" secondAttribute="bottom" constant="8" id="tSU-JB-2Hl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="34c-UR-afM" secondAttribute="trailing" constant="-20" id="ukY-ni-uol"/>
+                            <constraint firstItem="KFl-KE-ib0" firstAttribute="leading" secondItem="hHM-tu-AHK" secondAttribute="trailing" constant="-107" id="voM-1W-AE3"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="NmG-lg-nFZ"/>
+                                <exclude reference="voM-1W-AE3"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="datePicker" destination="34c-UR-afM" id="nhV-bq-suJ"/>
+                        <outlet property="itemPicker" destination="KFl-KE-ib0" id="XO6-E0-e6U"/>
+                        <outlet property="messageLabel" destination="hHM-tu-AHK" id="FAk-l0-hFm"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="a8b-49-ez5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZOx-T4-lLo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1714" y="843"/>
+            <point key="canvasLocation" x="1717" y="851"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OCF-yY-FCp">
