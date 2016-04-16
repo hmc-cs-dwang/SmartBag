@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		25510A841CC1EDEB008E95F9 /* BLEUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 25510A7E1CC1EDEB008E95F9 /* BLEUtility.m */; };
+		25510A851CC1EDEB008E95F9 /* DFBlunoDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 25510A801CC1EDEB008E95F9 /* DFBlunoDevice.m */; };
+		25510A861CC1EDEB008E95F9 /* DFBlunoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 25510A821CC1EDEB008E95F9 /* DFBlunoManager.m */; };
+		25510A881CC1F1B4008E95F9 /* BLEDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 25510A7C1CC1EDEB008E95F9 /* BLEDevice.m */; };
+		25510A8A1CC1F231008E95F9 /* BagItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25510A891CC1F231008E95F9 /* BagItem.swift */; };
 		325327CA1CC1E09300C28DC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325327C91CC1E09300C28DC1 /* AppDelegate.swift */; };
 		325327CC1CC1E09300C28DC1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325327CB1CC1E09300C28DC1 /* ViewController.swift */; };
 		325327CF1CC1E09300C28DC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325327CD1CC1E09300C28DC1 /* Main.storyboard */; };
@@ -39,6 +44,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		25510A7B1CC1EDEB008E95F9 /* BLEDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEDevice.h; sourceTree = "<group>"; };
+		25510A7C1CC1EDEB008E95F9 /* BLEDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEDevice.m; sourceTree = "<group>"; };
+		25510A7D1CC1EDEB008E95F9 /* BLEUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEUtility.h; sourceTree = "<group>"; };
+		25510A7E1CC1EDEB008E95F9 /* BLEUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEUtility.m; sourceTree = "<group>"; };
+		25510A7F1CC1EDEB008E95F9 /* DFBlunoDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFBlunoDevice.h; sourceTree = "<group>"; };
+		25510A801CC1EDEB008E95F9 /* DFBlunoDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFBlunoDevice.m; sourceTree = "<group>"; };
+		25510A811CC1EDEB008E95F9 /* DFBlunoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DFBlunoManager.h; sourceTree = "<group>"; };
+		25510A821CC1EDEB008E95F9 /* DFBlunoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DFBlunoManager.m; sourceTree = "<group>"; };
+		25510A871CC1EE9D008E95F9 /* Smartbag-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Smartbag-Bridging-Header.h"; sourceTree = "<group>"; };
+		25510A891CC1F231008E95F9 /* BagItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BagItem.swift; sourceTree = "<group>"; };
 		325327C61CC1E09300C28DC1 /* SmartBag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartBag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		325327C91CC1E09300C28DC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		325327CB1CC1E09300C28DC1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -84,9 +99,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		25510A791CC1EDEB008E95F9 /* Bluno */ = {
+			isa = PBXGroup;
+			children = (
+				25510A7A1CC1EDEB008E95F9 /* Core */,
+				25510A7F1CC1EDEB008E95F9 /* DFBlunoDevice.h */,
+				25510A801CC1EDEB008E95F9 /* DFBlunoDevice.m */,
+				25510A811CC1EDEB008E95F9 /* DFBlunoManager.h */,
+				25510A821CC1EDEB008E95F9 /* DFBlunoManager.m */,
+			);
+			path = Bluno;
+			sourceTree = "<group>";
+		};
+		25510A7A1CC1EDEB008E95F9 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				25510A7B1CC1EDEB008E95F9 /* BLEDevice.h */,
+				25510A7C1CC1EDEB008E95F9 /* BLEDevice.m */,
+				25510A7D1CC1EDEB008E95F9 /* BLEUtility.h */,
+				25510A7E1CC1EDEB008E95F9 /* BLEUtility.m */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		325327BD1CC1E09300C28DC1 = {
 			isa = PBXGroup;
 			children = (
+				25510A871CC1EE9D008E95F9 /* Smartbag-Bridging-Header.h */,
 				325327C81CC1E09300C28DC1 /* SmartBag */,
 				325327E01CC1E09300C28DC1 /* SmartBagTests */,
 				325327EB1CC1E09300C28DC1 /* SmartBagUITests */,
@@ -107,6 +146,7 @@
 		325327C81CC1E09300C28DC1 /* SmartBag */ = {
 			isa = PBXGroup;
 			children = (
+				25510A791CC1EDEB008E95F9 /* Bluno */,
 				325327C91CC1E09300C28DC1 /* AppDelegate.swift */,
 				325327CB1CC1E09300C28DC1 /* ViewController.swift */,
 				325327CD1CC1E09300C28DC1 /* Main.storyboard */,
@@ -281,6 +321,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25510A8A1CC1F231008E95F9 /* BagItem.swift in Sources */,
+				25510A881CC1F1B4008E95F9 /* BLEDevice.m in Sources */,
+				25510A861CC1EDEB008E95F9 /* DFBlunoManager.m in Sources */,
+				25510A841CC1EDEB008E95F9 /* BLEUtility.m in Sources */,
+				25510A851CC1EDEB008E95F9 /* DFBlunoDevice.m in Sources */,
 				325327D21CC1E09300C28DC1 /* SmartBag.xcdatamodeld in Sources */,
 				325327FB1CC1EA0D00C28DC1 /* BagItemCellTableViewCell.swift in Sources */,
 				325327CC1CC1E09300C28DC1 /* ViewController.swift in Sources */,
