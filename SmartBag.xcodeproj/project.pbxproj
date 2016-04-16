@@ -1,0 +1,524 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		325327CA1CC1E09300C28DC1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325327C91CC1E09300C28DC1 /* AppDelegate.swift */; };
+		325327CC1CC1E09300C28DC1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325327CB1CC1E09300C28DC1 /* ViewController.swift */; };
+		325327CF1CC1E09300C28DC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325327CD1CC1E09300C28DC1 /* Main.storyboard */; };
+		325327D21CC1E09300C28DC1 /* SmartBag.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 325327D01CC1E09300C28DC1 /* SmartBag.xcdatamodeld */; };
+		325327D41CC1E09300C28DC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 325327D31CC1E09300C28DC1 /* Assets.xcassets */; };
+		325327D71CC1E09300C28DC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 325327D51CC1E09300C28DC1 /* LaunchScreen.storyboard */; };
+		325327E21CC1E09300C28DC1 /* SmartBagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325327E11CC1E09300C28DC1 /* SmartBagTests.swift */; };
+		325327ED1CC1E09300C28DC1 /* SmartBagUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325327EC1CC1E09300C28DC1 /* SmartBagUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		325327DE1CC1E09300C28DC1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 325327BE1CC1E09300C28DC1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 325327C51CC1E09300C28DC1;
+			remoteInfo = SmartBag;
+		};
+		325327E91CC1E09300C28DC1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 325327BE1CC1E09300C28DC1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 325327C51CC1E09300C28DC1;
+			remoteInfo = SmartBag;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		325327C61CC1E09300C28DC1 /* SmartBag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SmartBag.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		325327C91CC1E09300C28DC1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		325327CB1CC1E09300C28DC1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		325327CE1CC1E09300C28DC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		325327D11CC1E09300C28DC1 /* SmartBag.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SmartBag.xcdatamodel; sourceTree = "<group>"; };
+		325327D31CC1E09300C28DC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		325327D61CC1E09300C28DC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		325327D81CC1E09300C28DC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		325327DD1CC1E09300C28DC1 /* SmartBagTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartBagTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		325327E11CC1E09300C28DC1 /* SmartBagTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartBagTests.swift; sourceTree = "<group>"; };
+		325327E31CC1E09300C28DC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		325327E81CC1E09300C28DC1 /* SmartBagUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SmartBagUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		325327EC1CC1E09300C28DC1 /* SmartBagUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmartBagUITests.swift; sourceTree = "<group>"; };
+		325327EE1CC1E09300C28DC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		325327C31CC1E09300C28DC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		325327DA1CC1E09300C28DC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		325327E51CC1E09300C28DC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		325327BD1CC1E09300C28DC1 = {
+			isa = PBXGroup;
+			children = (
+				325327C81CC1E09300C28DC1 /* SmartBag */,
+				325327E01CC1E09300C28DC1 /* SmartBagTests */,
+				325327EB1CC1E09300C28DC1 /* SmartBagUITests */,
+				325327C71CC1E09300C28DC1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		325327C71CC1E09300C28DC1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				325327C61CC1E09300C28DC1 /* SmartBag.app */,
+				325327DD1CC1E09300C28DC1 /* SmartBagTests.xctest */,
+				325327E81CC1E09300C28DC1 /* SmartBagUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		325327C81CC1E09300C28DC1 /* SmartBag */ = {
+			isa = PBXGroup;
+			children = (
+				325327C91CC1E09300C28DC1 /* AppDelegate.swift */,
+				325327CB1CC1E09300C28DC1 /* ViewController.swift */,
+				325327CD1CC1E09300C28DC1 /* Main.storyboard */,
+				325327D31CC1E09300C28DC1 /* Assets.xcassets */,
+				325327D51CC1E09300C28DC1 /* LaunchScreen.storyboard */,
+				325327D81CC1E09300C28DC1 /* Info.plist */,
+				325327D01CC1E09300C28DC1 /* SmartBag.xcdatamodeld */,
+			);
+			path = SmartBag;
+			sourceTree = "<group>";
+		};
+		325327E01CC1E09300C28DC1 /* SmartBagTests */ = {
+			isa = PBXGroup;
+			children = (
+				325327E11CC1E09300C28DC1 /* SmartBagTests.swift */,
+				325327E31CC1E09300C28DC1 /* Info.plist */,
+			);
+			path = SmartBagTests;
+			sourceTree = "<group>";
+		};
+		325327EB1CC1E09300C28DC1 /* SmartBagUITests */ = {
+			isa = PBXGroup;
+			children = (
+				325327EC1CC1E09300C28DC1 /* SmartBagUITests.swift */,
+				325327EE1CC1E09300C28DC1 /* Info.plist */,
+			);
+			path = SmartBagUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		325327C51CC1E09300C28DC1 /* SmartBag */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 325327F11CC1E09300C28DC1 /* Build configuration list for PBXNativeTarget "SmartBag" */;
+			buildPhases = (
+				325327C21CC1E09300C28DC1 /* Sources */,
+				325327C31CC1E09300C28DC1 /* Frameworks */,
+				325327C41CC1E09300C28DC1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SmartBag;
+			productName = SmartBag;
+			productReference = 325327C61CC1E09300C28DC1 /* SmartBag.app */;
+			productType = "com.apple.product-type.application";
+		};
+		325327DC1CC1E09300C28DC1 /* SmartBagTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 325327F41CC1E09300C28DC1 /* Build configuration list for PBXNativeTarget "SmartBagTests" */;
+			buildPhases = (
+				325327D91CC1E09300C28DC1 /* Sources */,
+				325327DA1CC1E09300C28DC1 /* Frameworks */,
+				325327DB1CC1E09300C28DC1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				325327DF1CC1E09300C28DC1 /* PBXTargetDependency */,
+			);
+			name = SmartBagTests;
+			productName = SmartBagTests;
+			productReference = 325327DD1CC1E09300C28DC1 /* SmartBagTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		325327E71CC1E09300C28DC1 /* SmartBagUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 325327F71CC1E09300C28DC1 /* Build configuration list for PBXNativeTarget "SmartBagUITests" */;
+			buildPhases = (
+				325327E41CC1E09300C28DC1 /* Sources */,
+				325327E51CC1E09300C28DC1 /* Frameworks */,
+				325327E61CC1E09300C28DC1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				325327EA1CC1E09300C28DC1 /* PBXTargetDependency */,
+			);
+			name = SmartBagUITests;
+			productName = SmartBagUITests;
+			productReference = 325327E81CC1E09300C28DC1 /* SmartBagUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		325327BE1CC1E09300C28DC1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Cam;
+				TargetAttributes = {
+					325327C51CC1E09300C28DC1 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					325327DC1CC1E09300C28DC1 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 325327C51CC1E09300C28DC1;
+					};
+					325327E71CC1E09300C28DC1 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 325327C51CC1E09300C28DC1;
+					};
+				};
+			};
+			buildConfigurationList = 325327C11CC1E09300C28DC1 /* Build configuration list for PBXProject "SmartBag" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 325327BD1CC1E09300C28DC1;
+			productRefGroup = 325327C71CC1E09300C28DC1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				325327C51CC1E09300C28DC1 /* SmartBag */,
+				325327DC1CC1E09300C28DC1 /* SmartBagTests */,
+				325327E71CC1E09300C28DC1 /* SmartBagUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		325327C41CC1E09300C28DC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				325327D71CC1E09300C28DC1 /* LaunchScreen.storyboard in Resources */,
+				325327D41CC1E09300C28DC1 /* Assets.xcassets in Resources */,
+				325327CF1CC1E09300C28DC1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		325327DB1CC1E09300C28DC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		325327E61CC1E09300C28DC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		325327C21CC1E09300C28DC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				325327D21CC1E09300C28DC1 /* SmartBag.xcdatamodeld in Sources */,
+				325327CC1CC1E09300C28DC1 /* ViewController.swift in Sources */,
+				325327CA1CC1E09300C28DC1 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		325327D91CC1E09300C28DC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				325327E21CC1E09300C28DC1 /* SmartBagTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		325327E41CC1E09300C28DC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				325327ED1CC1E09300C28DC1 /* SmartBagUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		325327DF1CC1E09300C28DC1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 325327C51CC1E09300C28DC1 /* SmartBag */;
+			targetProxy = 325327DE1CC1E09300C28DC1 /* PBXContainerItemProxy */;
+		};
+		325327EA1CC1E09300C28DC1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 325327C51CC1E09300C28DC1 /* SmartBag */;
+			targetProxy = 325327E91CC1E09300C28DC1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		325327CD1CC1E09300C28DC1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				325327CE1CC1E09300C28DC1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		325327D51CC1E09300C28DC1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				325327D61CC1E09300C28DC1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		325327EF1CC1E09300C28DC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		325327F01CC1E09300C28DC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		325327F21CC1E09300C28DC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SmartBag/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Cam.SmartBag;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		325327F31CC1E09300C28DC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SmartBag/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Cam.SmartBag;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		325327F51CC1E09300C28DC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SmartBagTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Cam.SmartBagTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartBag.app/SmartBag";
+			};
+			name = Debug;
+		};
+		325327F61CC1E09300C28DC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = SmartBagTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Cam.SmartBagTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SmartBag.app/SmartBag";
+			};
+			name = Release;
+		};
+		325327F81CC1E09300C28DC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SmartBagUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Cam.SmartBagUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SmartBag;
+			};
+			name = Debug;
+		};
+		325327F91CC1E09300C28DC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = SmartBagUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Cam.SmartBagUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = SmartBag;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		325327C11CC1E09300C28DC1 /* Build configuration list for PBXProject "SmartBag" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				325327EF1CC1E09300C28DC1 /* Debug */,
+				325327F01CC1E09300C28DC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		325327F11CC1E09300C28DC1 /* Build configuration list for PBXNativeTarget "SmartBag" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				325327F21CC1E09300C28DC1 /* Debug */,
+				325327F31CC1E09300C28DC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		325327F41CC1E09300C28DC1 /* Build configuration list for PBXNativeTarget "SmartBagTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				325327F51CC1E09300C28DC1 /* Debug */,
+				325327F61CC1E09300C28DC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		325327F71CC1E09300C28DC1 /* Build configuration list for PBXNativeTarget "SmartBagUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				325327F81CC1E09300C28DC1 /* Debug */,
+				325327F91CC1E09300C28DC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		325327D01CC1E09300C28DC1 /* SmartBag.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				325327D11CC1E09300C28DC1 /* SmartBag.xcdatamodel */,
+			);
+			currentVersion = 325327D11CC1E09300C28DC1 /* SmartBag.xcdatamodel */;
+			path = SmartBag.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 325327BE1CC1E09300C28DC1 /* Project object */;
+}
