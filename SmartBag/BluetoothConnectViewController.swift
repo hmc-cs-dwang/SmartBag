@@ -26,6 +26,7 @@ class BluetoothConnectViewController : UIViewController, DFBlunoDelegate {
         if let blunoManager = bluno as? DFBlunoManager {
             blunoManager.delegate = self
             blunoManager.scan()
+            loadingIcon.startAnimating()
         }
     }
     
@@ -36,7 +37,7 @@ class BluetoothConnectViewController : UIViewController, DFBlunoDelegate {
     
     // DFBlunoDelegate functions
     @objc func bleDidUpdateState(bleSupported: Bool) {
-        if (bleSupported) {
+        if (bleSupported && blunoManager != nil) {
             blunoManager!.scan()
         }
     }
