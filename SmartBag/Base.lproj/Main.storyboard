@@ -61,7 +61,7 @@
                     <navigationItem key="navigationItem" id="U9c-co-wae"/>
                     <connections>
                         <outlet property="view" destination="e7a-uW-b5c" id="vhX-Zd-5B7"/>
-                        <segue destination="snW-Xz-1cU" kind="presentation" id="QOz-2W-odN"/>
+                        <segue destination="snW-Xz-1cU" kind="presentation" identifier="AddItemSegue" id="QOz-2W-odN"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ypS-ef-gPB" userLabel="First Responder" sceneMemberID="firstResponder"/>

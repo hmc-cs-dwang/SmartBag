@@ -8,8 +8,10 @@
 
 import UIKit
 
-class BagTableViewController: UITableViewController, PListManagerDelegate {
+class BagTableViewController: UITableViewController, PListManagerDelegate, DFBlunoDelegate {
     var plistManager = PListManager()
+    
+    var blunoManager: DFBlunoManager?
     
     var bagItems: [BagItem] {
         get {
@@ -21,6 +23,13 @@ class BagTableViewController: UITableViewController, PListManagerDelegate {
         super.viewDidLoad()
         
         plistManager.delegate = self
+        
+        let bluno = DFBlunoManager.sharedInstance()
+        
+        if let blunoM = bluno as? DFBlunoManager {
+            blunoManager = blunoM
+            blunoManager!.delegate = self
+        }
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -58,6 +67,39 @@ class BagTableViewController: UITableViewController, PListManagerDelegate {
     func didChangePlist(sender: PListManager) {
         if !isViewLoaded() {
             tableView.reloadData()
+        }
+    }
+    
+    
+    // DFBlunoDelegate functions
+    @objc func bleDidUpdateState(bleSupported: Bool) {
+        if (bleSupported && blunoManager != nil) {
+            blunoManager!.scan()
+        }
+    }
+    
+    @objc func didDiscoverDevice(dev: DFBlunoDevice!) {
+        // pass
+    }
+    
+    @objc func readyToCommunicate(dev: DFBlunoDevice!) {
+        // pass
+    }
+    
+    @objc func didDisconnectDevice(dev: DFBlunoDevice!) {
+        print("connection is lost")
+    }
+    
+    @objc func didWriteData(dev: DFBlunoDevice!) {
+        // pass
+    }
+    
+    @objc(didReceiveData:Device:) func didReceiveData(data: NSData!, device dev: DFBlunoDevice!) {
+        let itemId = NSString(data:data, encoding:NSUTF8StringEncoding) as! String
+        if let _ = plistManager.getItem(itemId) {
+            plistManager.visitItem(itemId)
+        } else {
+            self.performSegueWithIdentifier("AddItemSegue", sender: self)
         }
     }
 
