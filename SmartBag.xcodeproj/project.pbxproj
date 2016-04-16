@@ -26,6 +26,7 @@
 		325328021CC1EFDE00C28DC1 /* itemsPList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 325328011CC1EFDE00C28DC1 /* itemsPList.plist */; };
 		3253280E1CC1F62B00C28DC1 /* BagItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3253280D1CC1F62B00C28DC1 /* BagItem.swift */; };
 		325328101CC1FA2700C28DC1 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3253280F1CC1FA2700C28DC1 /* AddItemViewController.swift */; };
+		325328131CC2104500C28DC1 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 325328121CC2104500C28DC1 /* ItemViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		325328011CC1EFDE00C28DC1 /* itemsPList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = itemsPList.plist; sourceTree = "<group>"; };
 		3253280D1CC1F62B00C28DC1 /* BagItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BagItem.swift; sourceTree = "<group>"; };
 		3253280F1CC1FA2700C28DC1 /* AddItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		325328121CC2104500C28DC1 /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -195,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				325327FC1CC1EDE900C28DC1 /* BagTableViewController.swift */,
+				325328121CC2104500C28DC1 /* ItemViewController.swift */,
 				325327FF1CC1EF9B00C28DC1 /* PListManager.swift */,
 				325328011CC1EFDE00C28DC1 /* itemsPList.plist */,
 				325327FA1CC1EA0D00C28DC1 /* BagItemCellTableViewCell.swift */,
@@ -347,6 +350,7 @@
 				25510A881CC1F1B4008E95F9 /* BLEDevice.m in Sources */,
 				25510A861CC1EDEB008E95F9 /* DFBlunoManager.m in Sources */,
 				25510A841CC1EDEB008E95F9 /* BLEUtility.m in Sources */,
+				325328131CC2104500C28DC1 /* ItemViewController.swift in Sources */,
 				25510A851CC1EDEB008E95F9 /* DFBlunoDevice.m in Sources */,
 				325327D21CC1E09300C28DC1 /* SmartBag.xcdatamodeld in Sources */,
 				325328101CC1FA2700C28DC1 /* AddItemViewController.swift in Sources */,

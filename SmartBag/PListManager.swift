@@ -8,13 +8,18 @@
 
 import UIKit
 
+protocol PListManagerDelegate : class {
+    func didChangePlist(sender: PListManager)
+}
+
 class PListManager: NSObject {
     var path = String()
     var dict = NSMutableDictionary()
     
+    var delegate: PListManagerDelegate?
+    
     override init() {
         super.init()
-        
         let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray
         let documentsDirectory = paths[0] as! NSString
         path = documentsDirectory.stringByAppendingPathComponent("itemsPList.plist")
@@ -40,14 +45,17 @@ class PListManager: NSObject {
             //fileManager.removeItemAtPath(path, error: nil)
         }
         
-        // path = NSBundle.mainBundle().pathForResource(Constant.PLIST_NAME, ofType: "plist")!
         dict = NSMutableDictionary(contentsOfFile: path)!
+        
     }
     
     func addItem(key: String, item: BagItem) {
         dict.setObject(item, forKey: key)
         if dict.writeToFile(path, atomically: false) {
             print("Did add a new item.")
+        }
+        if delegate != nil {
+            delegate!.didChangePlist(self)
         }
     }
     
@@ -56,6 +64,26 @@ class PListManager: NSObject {
             return item
         }
         return nil
+    }
+    
+    func visitItem(key: String) {
+        if let item = dict.valueForKey(key) as? BagItem {
+            item.itemIn_ = !item.itemIn_
+            dict.setObject(item, forKey: key)
+        }
+        if delegate != nil {
+            delegate!.didChangePlist(self)
+        }
+    }
+    
+    func getPresentItems() -> [BagItem] {
+        var bag = [BagItem]()
+        for item in dict.allValues {
+            if ((item as? BagItem) != nil) {
+                bag.append(item as! BagItem)
+            }
+        }
+        return bag
     }
     
 }
