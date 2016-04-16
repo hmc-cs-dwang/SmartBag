@@ -13,6 +13,8 @@ class BagTableViewController: UITableViewController, PListManagerDelegate, DFBlu
     
     var blunoManager: DFBlunoManager?
     
+    var itemId: String = ""
+    
     var bagItems: [BagItem] {
         get {
             return plistManager.getPresentItems()
@@ -95,11 +97,18 @@ class BagTableViewController: UITableViewController, PListManagerDelegate, DFBlu
     }
     
     @objc(didReceiveData:Device:) func didReceiveData(data: NSData!, device dev: DFBlunoDevice!) {
-        let itemId = NSString(data:data, encoding:NSUTF8StringEncoding) as! String
+        itemId = NSString(data:data, encoding:NSUTF8StringEncoding) as! String
         if let _ = plistManager.getItem(itemId) {
             plistManager.visitItem(itemId)
         } else {
             self.performSegueWithIdentifier("AddItemSegue", sender: self)
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "AddItemViewController") {
+            let addVC = segue.destinationViewController as! AddItemViewController
+            addVC.key = itemId
         }
     }
 
