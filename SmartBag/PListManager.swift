@@ -71,7 +71,9 @@ class PListManager: NSObject {
             item.itemIn_ = !item.itemIn_
             dict.setObject(item, forKey: key)
         }
-        delegate.didChangePlist(self)
+        if delegate != nil {
+            delegate!.didChangePlist(self)
+        }
     }
     
     func getPresentItems() -> [BagItem] {
