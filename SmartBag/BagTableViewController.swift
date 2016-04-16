@@ -9,6 +9,7 @@
 import UIKit
 
 class BagTableViewController: UITableViewController {
+    var plistManager = PListManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +42,7 @@ class BagTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("item", forIndexPath: indexPath) as! BagItemCellTableViewCell
         
+        // cell.itemName =
 
         return cell
     }
